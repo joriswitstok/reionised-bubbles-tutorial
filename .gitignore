@@ -1,0 +1,14 @@
+data/mastDownload
+manual/*.auxiliary
+manual/*.bbl
+manual/*.blg
+manual/*.log
+manual/*.out
+manual/*.synctex.gz
+solutions
+
+.DS_store
+*/.DS_store
+__pycache__/*
+*/__pycache__/*
+build/

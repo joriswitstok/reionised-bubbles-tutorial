@@ -1,0 +1,20 @@
+# Install pyneb with ~/anaconda3/envs/bubble3/bin/pip3 install spectres
+name: bubble3
+channels:
+  - astropy
+  - conda-forge
+dependencies:
+  - python=3.11
+  - numpy
+  - scipy
+  - astropy
+  - astroquery
+  - lmfit
+  - emcee
+  - corner
+  - matplotlib
+  - seaborn
+  - pandas
+  - pylint
+  - notebook
+  - anaconda-clean

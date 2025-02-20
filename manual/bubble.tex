@@ -1,0 +1,290 @@
+\documentclass{article}
+
+\usepackage[margin=2.5cm]{geometry}
+
+\usepackage[authoryear, comma]{natbib}
+\bibliographystyle{bib_style}
+\input{auxiliary/journals}
+\bibpunct[]{(}{)}{;}{a}{}{,}
+
+\usepackage{newtxtext, newtxmath}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage{hyperref}
+
+\usepackage{ae, aecompl}
+\usepackage{graphicx}
+\graphicspath{{./}{Plots/}{../plots/}}
+
+\usepackage[dvipsnames]{xcolor}
+\usepackage{xspace}
+\usepackage{soul}
+\usepackage{booktabs}
+\usepackage{adjustbox}
+\usepackage{comment}
+
+\usepackage{amsmath}
+\let\openbox\relax
+\usepackage{amsthm}
+\usepackage{commath}
+\usepackage{siunitx}
+\usepackage{nth}
+
+\usepackage[capitalise, noabbrev]{cleveref}
+\usepackage{enumitem}
+\usepackage{csvsimple}
+\usepackage{multirow}
+\usepackage{array}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+
+\crefname{figure}{Fig.}{Figs.}
+\crefname{equation}{equation}{equations}
+
+\newcommand{\Lymana}{{Lyman-\ensuremath{\upalpha}}\xspace}
+\newcommand{\Lymanatext}{Lyman-α}
+\newcommand{\Lya}{{Ly\ensuremath{\upalpha}}\xspace}
+\newcommand{\Lyatext}{Lyα}
+\newcommand{\HI}{\hbox{H\,{\sc i}}\xspace}
+\newcommand{\HII}{\hbox{H\,{\sc ii}}\xspace}
+\newcommand{\CIV}{\hbox{C\,{\sc iv}}\xspace}
+\newcommand{\HeI}{\hbox{He\,{\sc i}}\xspace}
+\newcommand{\HeII}{\hbox{He\,{\sc ii}}\xspace}
+\newcommand{\CIII}{\hbox{C\,{\sc iii}}\xspace}
+\newcommand{\CIIIs}{\hbox{C\,{\sc iii}]}\xspace}
+\newcommand{\CIIIf}{\hbox{[C\,{\sc iii}]}\xspace}
+\newcommand{\OI}{\hbox{[O\,{\sc i}]}\xspace}
+\newcommand{\OII}{\hbox{[O\,{\sc ii}]}\xspace}
+\newcommand{\OIII}{\hbox{[O\,{\sc iii}]}\xspace}
+\newcommand{\OIIIs}{\hbox{O\,{\sc iii}]}\xspace}
+\newcommand{\NeIII}{\hbox{[Ne\,{\sc iii}]}\xspace}
+\newcommand{\MgII}{\hbox{Mg\,{\sc ii}}\xspace}
+\newcommand{\NII}{\hbox{[N\,{\sc ii}]}\xspace}
+\newcommand{\NIII}{\hbox{N\,{\sc iii}]}\xspace}
+\newcommand{\NIV}{\hbox{N\,{\sc iv}]}\xspace}
+\newcommand{\SII}{\hbox{[S\,{\sc ii}]}\xspace}
+\newcommand{\CII}{\hbox{[C\,{\sc ii}]}\xspace}
+
+\newcommand{\Halpha}{\ensuremath{\mathrm{H}\upalpha}\xspace}
+\newcommand{\Hbeta}{\ensuremath{\mathrm{H}\upbeta}\xspace}
+\newcommand{\Hgamma}{\ensuremath{\mathrm{H}\upgamma}\xspace}
+\newcommand{\Hdelta}{\ensuremath{\mathrm{H}\updelta}\xspace}
+\newcommand{\Hepsilon}{\ensuremath{\mathrm{H}\upepsilon}\xspace}
+\newcommand{\Paalpha}{\ensuremath{\mathrm{Pa}\upalpha}\xspace}
+\newcommand{\Pabeta}{\ensuremath{\mathrm{Pa}\upbeta}\xspace}
+
+\hypersetup{
+    unicode=true,
+    final=true,
+    plainpages=false,
+    pdfstartview=FitV,
+    pdftoolbar=false,
+    pdfmenubar=true,
+    bookmarksopen=true,
+    bookmarksnumbered=true,
+    breaklinks=true,
+    linktocpage,
+    colorlinks=true,
+    linkcolor=Blue,
+    urlcolor=Blue,
+    citecolor=Blue,
+    anchorcolor=green
+}
+
+\theoremstyle{definition}
+\newtheorem{problem}{Problem}[section]
+
+\title{Reionized bubbles around primordial galaxies: exercises}
+\author{Joris Witstok (\href{mailto:joris.witstok@nbi.ku.dk}{joris.witstok@nbi.ku.dk})}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Background problems: recombination lines in astrophysical nebulae}
+
+Given atomic number $Z$, the energy levels $E_n$ in the classical \citet{1913PMag...26....1B} model of an atom are
+\begin{equation}
+    \label{eq:Atomic_energy_levels}
+    E_n \approx \frac{-13.6 Z^2}{n^2} \, \mathrm{eV} \, .
+\end{equation}
+
+\noindent Electronic transitions between energy levels $n \rightarrow m$ then offer a natural theoretical explanation for the empirical Rydberg formula,
+\begin{equation}
+    \label{eq:Rydberg_formula}
+    \frac{1}{\lambda} = R Z^2 \left( \frac{1}{m^2} - \frac{1}{n^2} \right) ,
+\end{equation}
+
+\noindent which relates spectral line wavelengths $\lambda$ to a pattern based on a set of two integers, $n$ and $m$ ($n > m$).
+
+\begin{problem}
+    Given the photon energy $E = hc/\lambda$, work out $R_\mathrm{H} \equiv R$, the Rydberg constant for hydrogen ($Z = 1$).
+\end{problem}
+\begin{problem}
+    \label{prob:HI_wavelengths}
+    \begin{enumerate}[label=(\alph*)]
+        \item[]
+        \item Using this atomic model of hydrogen, calculate the wavelengths of the principal spectral lines in the Lyman, Balmer, and Paschen series (\Lya, \Halpha, and \Paalpha), corresponding to the $n+1 \rightarrow n$ electronic transitions for $n \in \left\{ 1, 2, 3 \right\}$.
+        \item Across what redshift range can we observe each of these lines with the low-resolution PRISM disperser of the JWST/NIRSpec\footnote{The wavelength coverage of the various NIRSpec instrument modes is documented here: \url{https://jwst-docs.stsci.edu/jwst-near-infrared-spectrograph/nirspec-instrumentation/nirspec-dispersers-and-filters}.} instrument? And with the medium-resolution G235M grating?
+        \item How do the wavelengths of these spectral lines compare to the equivalent \HeII (singly ionised helium) electronic transitions?
+    \end{enumerate}
+\end{problem}
+\begin{problem}
+    Keeping in mind that electrons usually carry some kinetic energy, what is the energy of a photon produced in the event where hydrogen recombination ($H^+ + e^- \rightarrow H^0$) directly results in the ground state ($n = 1$)? Explain why for case-B recombination we can make the so-called `on-the-spot approximation', where only recombinations leaving hydrogen in one of the excited states ($n > 1$) are taken into account.
+\end{problem}
+\begin{problem}
+    \label{prob:HII_region}
+    When evolving on the main sequence, spectral O-type stars may have a size ten times that of the Sun, effective surface temperature of $\num{40000} \, \mathrm{K}$, and emit hydrogen-ionising photons at a rate of $\dot{N}_\text{ion} = 10^{49} \, \mathrm{s^{-1}}$. Consider a surrounding \HII region consisting of pure hydrogen, with a number density of $n_\mathrm{H} = 300 \, \mathrm{cm^{-3}}$.
+    \begin{enumerate}[label=(\alph*)]
+        \item If the \HII region is $4 \, \mathrm{parsec}$ in diameter, would it be ionisation bounded? Check in the range of electron temperatures $\num{10000} \, \mathrm{K} < T_e < \num{30000} \, \mathrm{K}$, where you can assume the (case-B) recombination rate of the gas to follow $\alpha_\text{rec} = 2.54 \times 10^{-13} \, (T_e/10^4)^{-0.8} \, \mathrm{cm^3 \, s^{-1}}$.
+        \item If roughly two out of three of recombination events lead to the emission of a \Lya photon (in the ionisation-bounded case), what is the \Lya luminosity of the cloud? How does this compare to the bolometric luminosity of the central star, if assumed to be a perfect blackbody?
+    \end{enumerate}
+\end{problem}
+
+\section{Background problems: measuring distances in an expanding universe}
+
+\begin{problem}
+    \label{prob:bubble_radius_evolution}
+    Assume the time evolution of an ionised bubble radius, $R_\text{ion}(t)$, follows the differential equation given by \citet{2000ApJ...542L..75C}:
+    \begin{equation}
+        \frac{\dif R_\mathrm{ion}^3}{\dif t} = 3 H(z) R_\mathrm{ion}^3 + \frac{3 f_\mathrm{esc, \, LyC} \, \dot{N}_\mathrm{ion}}{4\pi \bar{n}_\mathrm{H}} - C_\mathrm{HII} \bar{n}_\mathrm{H} \alpha_\mathrm{B} R_\mathrm{ion}^3 \, .
+    \end{equation}
+    \begin{enumerate}[label=(\alph*)]
+        \item If we only consider the cosmic expansion represented by the first term on the right-hand side, solve for $R_\text{ion}(t)$. Work out the $e$-folding time at redshift $z = 7$ assuming a \citet{2020A&A...641A...6P} cosmology, where the Hubble parameter is $H(z=7) \approx 856.6 \, \mathrm{km \, s^{-1} \, Mpc^{-1}}$. Is this effect important at this redshift? (Hint: compare to the age of the Universe at this redshift.)
+        \item If we instead neglected the cosmic expansion and recombinations, how would $R_\text{ion}(t)$ evolve in terms of the ionising photon production rate $N_\text{ion}$ and escape fraction $f_\text{esc, LyC}$ of the central galaxy? (Hint: see \citet{2020MNRAS.499.1395M} or \citet{2024A&A...682A..40W}.)
+        \item Given the present-day ($z = 0$) cosmic mean hydrogen number density of $\bar{n}_\text{H} \approx 1.88 \times 10^{-7} \, \mathrm{cm^{-3}}$, how large does an ionised bubble need to be for recombination events to balance the ionising output of a $z = 7$ galaxy, if it produces ionising photons at a rate of $N_\text{ion} = 10^{54} \, \mathrm{s^{-1}}$, of which $f_\text{esc, LyC} = 10\%$ escape? You can assume the IGM within the bubble to have mean density and recombination rate as in \cref{prob:HII_region}(b) with $T_e = \num{20000} \, \mathrm{K}$. What if the galaxy were at $z = 12$?
+    \end{enumerate}
+\end{problem}
+
+\section{Application to the JADES spectroscopic galaxy survey}
+
+\subsection{Summary of the exercise}
+
+In this exercise, we will use the method outlined in \citet{2024A&A...682A..40W} to estimate the size of an ionised bubble. This will involve calculating the \Lya transmission curve for the two-zone model from \citet{2020MNRAS.499.1395M}, where a photon trajectory starts inside a spherical ionised bubble (with a radius $R_\text{ion}$) centred on the source, before travelling through the IGM characterised by a `global' neutral fraction, $\bar{x}_\text{\HI}$. Then, given the intrinsic strength of \Lya predicted by converting the measured \Hbeta line luminosity, it is possible to work out a lower limit on $R_\text{ion}$, the bubble radius.
+\begin{figure*}
+	\centering
+	\includegraphics[width=\linewidth]{"Lya_bubble_transmission"}
+	\caption{IGM transmission curves, reproduced as Figure~1 from \citet{2020MNRAS.499.1395M}.
+	}
+	\label{fig:IGM_transmission}
+\end{figure*}
+\begin{figure*}
+	\centering
+	\includegraphics[width=\linewidth]{"10013682_3D_mapping"}
+	\caption{Neighbouring galaxies in the ionised bubble of ID 10013682 (partial reproduction of Figure~5 in \citealt{2024A&A...682A..40W}).
+	}
+	\label{fig:IGM_transmission}
+\end{figure*}
+
+\subsection{Gather spectroscopic data and measure the redshift and line fluxes}
+\label{ssec:Measure_redshift_and_line_fluxes}
+
+We will be using NIRSpec spectra obtained as part of the JWST Advanced Deep Extragalactic Survey \citep[JADES;][]{2023arXiv230602465E} in the Great Observatories Origins Deep Survey (GOODS) extragalactic legacy fields located in the North (GOODS-N) and South (GOODS-S). Specifically, we will start by looking at source ID 1899 in a medium-depth tier of JADES covering the GOODS-N field, which was identified by \citet{2025MNRAS.536...27W} as one of the most distant known \Lya emitting galaxies \citep[LAEs; see also][]{2024ApJ...975..208T, 2024arXiv240714201N}.
+
+NIRSpec spectroscopy in JADES is taken in the PRISM disperser operating at low spectral resolution across $1$-$5 \, \mathrm{\upmu m}$, as well as in the medium-resolution G140M, G235M, and G395M gratings (see \cref{prob:HI_wavelengths}). Fully reduced and science-ready observations from JADES are publicly available on the Mikulski Archive for Space Telescopes (MAST). A dedicated MAST web page (\url{https://archive.stsci.edu/hlsp/jades}) describes how we can access the high-level science products (HLSP) via the \textsc{python} package \textsc{astroquery}.
+\begin{enumerate}[label=(\alph*)]
+    \item Run the relevant code block in the notebook to download the PRISM/CLEAR, G140M, and G395M spectra of ID 1899 onto your local machine.
+    \item Open the preview of the PRISM spectrum. This shows the one-dimensional spectrum, which is extracted from the two-dimensional spectrum (how the dispersed light will show up on the detector). Why is the central trace with positive signal-to-noise ratio (SNR) surrounded by two negative traces on either side?
+    \item Plot the one-dimensional spectra by reading in the downloaded \texttt{*x1d} files in FITS (Flexible Image Transport System) format.
+\end{enumerate}
+
+Several strong rest-frame optical emission lines are observed at the red of the spectrum covered by the G395M grating, from which we can measure a redshift, $z = \lambda_\mathrm{obs}/\lambda_\mathrm{emit} - 1$. At sufficiently high redshift (as is the case for ID 1899), the strong \Halpha line shifts out of the NIRSpec wavelength range. However, there is still the \Hbeta at a rest-frame wavelength of $4862.71 \, \Angstrom$, as well as two strong emission lines of \OIII are located at $4960.295 \, \Angstrom$ and $5008.24 \, \Angstrom$. The luminosity ratio between the \OIII lines is determined by atomic physics to be $F_{5008}/F_{4960} \approx 2.98$ across a range of temperatures and densities applicable to \HII regions (where the majority of the \OIII emission is produced).
+
+\begin{enumerate}[label=(\alph*)]
+    \setcounter{enumi}{3}
+    \item What is the highest redshift \Halpha can be seen with NIRSpec? And \Hbeta?
+    \item Given its spectral resolution of at least $R \approx 1000$ in the observed G395M spectrum, what is the expected precision (its standard deviation $\sigma_z$) of our redshift measurement? Assume the line spread function (LSF) is Gaussian, with full-width at half maximum (FWHM) $\Delta \lambda$ relating to $R$ via $R \equiv \lambda/\Delta\lambda$. (Hint: you can convert the FWHM of a Gaussian to the standard deviation $\sigma$ by dividing by a factor $2 \sqrt{2 \ln(2)} \approx 2.35$.)
+    \item Construct a model of Gaussian line profiles to measure the redshift from the \Hbeta and \OIII lines observed at $4.4$-$4.9 \, \mathrm{\upmu m}$ in the G395M spectrum. You can assume the spectral resolution to be constant value of $R = 1500$ across this wavelength range, and an intrinsic line width ranging across $0 < \sigma_\text{int} < 500 \, \mathrm{km \, s^{-1}}$. Does the uncertainty on the redshift measurement match your estimate from above (if not, why)?
+    \item With the measured systemic redshift, fit a Gaussian profile to the \Lya line in the G140M spectrum (NB: the line centre may be resonantly scattered away from the systemic redshift; see \cref{app:Frequency_wavelength_velocity_conversions} for the relevant conversions). From the luminosity ratio between \Lya and \Hbeta, determine the escape fraction of \Lya, $f_\text{esc, \Lya}$.
+\end{enumerate}
+
+\noindent Now we will repeat the exercise for (much fainter) source ID 10013682 in the DEEP/HST tier of JADES, which was first identified as a remarkably strong LAE in the GOODS-S field by \citet{2023A&A...678A..68S}.
+
+\begin{enumerate}[label=(\alph*)]
+    \setcounter{enumi}{7}
+    \item Given the lower SNR in the G395M spectrum, perform your redshift measurement on the lower-resolution PRISM data this time ($R \approx 100$; how is the precision expected to change?). For the fit, you can assume $R = 350$ at $\lambda_\mathrm{obs} > 4 \, \mathrm{\upmu m}$.
+    \item With the measured systemic redshift, again measure the strength of the \Lya line in the G140M spectrum and estimate $f_\text{esc, \Lya}$.
+\end{enumerate}
+
+\subsection{Validate against literature}
+
+From here on, we will focus on source ID 10013682 to study the ionised bubble it resides in. Compile the relevant measurements from \citet{2024A&A...682A..40W}, where ID 10013682 was analysed among a sample of high-redshift LAEs in JADES. We will need its sky coordinates, spectroscopic redshift, UV magnitude, the \Lya velocity offset $\Delta v_\text{\Lya}$ and escape fraction, $f_\text{esc, \Lya}$, which are summarised in Table~1. How do your measurements from \cref{ssec:Measure_redshift_and_line_fluxes} compare to those reported in \citet{2024A&A...682A..40W}?
+
+\subsection{Install prerequisites and calculate IGM transmission curves}
+
+Check whether you have installed the right modules by running the first code block. Download the \textsc{python} module \textsc{lymana-absorption} from \url{https://github.com/joriswitstok/lymana_absorption}. Verify that the code works by
+running the code block that reproduces Figure~1 from \citet{2020MNRAS.499.1395M}, as shown in \cref{fig:IGM_transmission}.
+
+\subsection{Calculate ionised bubble size}
+\label{Calculate_ionised_bubble_size}
+
+Finally, we will estimate the ionised bubble radius that ID 10013682 resides in. Following \citet{2024A&A...682A..40W}, we are looking for the value of $R_\text{ion}$ at which the IGM transmission at the measured \Lya velocity offset is equal to the estimated \Lya escape fraction to find an effective lower limit on $R_\text{ion}$.
+\begin{enumerate}[label=(\alph*)]
+    \item Predict the IGM transmission at the measured \Lya velocity offset $\Delta v_\text{\Lya}$ for a range of ionised bubble sizes (logarithmically spaced between $1 \, \mathrm{pkpc}$ and $10 \, \mathrm{pMpc}$), and estimate (through interpolation) at which ionised bubble radius $R_\text{ion}$ the IGM transmission becomes equal to the \Lya escape fraction. Why does this effectively yield a lower limit on $R_\text{ion}$?
+    \item Inexcusably, \citet{2024A&A...682A..40W} do not report uncertainties on their inferred bubble radii. Just considering the uncertainty on $\Delta v_\text{\Lya}$, what range of $R_\text{ion}$ do you find?
+    \item Given its absolute UV magnitude\footnote{See \url{https://en.wikipedia.org/wiki/Absolute_magnitude}.} of $M_\text{UV} \approx -17 \, \mathrm{mag}$ and ionising photon efficiency directly measured to be $\log \xi_\text{ion} = 25.66 \, \mathrm{Hz \, erg^{-1}}$ by \citet{2024A&A...684A..84S}, how long would it take ID 10013682 to create this ionised region itself if it had an escape fraction $100\%$? (Hint: use (i) \cref{app:Magnitude_system} to convert $M_\text{UV}$ to a flux density $F_{\nu, \, \text{UV}}$, (ii) \cref{app:Flux_conversions} to obtain the luminosity density $L_{\nu, \, \text{UV}}$, (iii) the fact that $\dot{N}_\text{ion} = \xi_\text{ion} L_{\nu, \, \text{UV}}$, and (iv) your solution from \cref{prob:bubble_radius_evolution}(b) to calculate the required age.)
+\end{enumerate}
+
+\subsection{Visualise the environment of the ionised bubble}
+
+The NIRCam wide-field slitless spectroscopic mode allows an efficient way to obtain spectra of a large number of galaxies. This has been exploited in the FRESCO survey \citep{2023MNRAS.525.2864O} covering both the GOODS fields, allowing a `blind' redshift search up to $z \approx 8$.
+\begin{enumerate}[label=(\alph*)]
+    \item Using the catalogue provided by \citet{2024ApJ...974...41H}, plot all nearby galaxies in the GOODS-S field that have been spectroscopically confirmed close to ID 10013682 (within approximately $5 \, \mathrm{pMpc}$).
+    \item Assuming the relations from \citet{2020MNRAS.499.1395M} to link the absolute UV magnitude $M_\text{UV}$ and UV slope $\beta_\text{UV}$ of a galaxy to its ionising photon production rate,
+    \begin{equation*}
+        \dot{N}_\text{ion} = 1.65 \times 10^{54} \, 10^{\frac{M_\text{UV}+20}{-2.5}} \, \left( \frac{912.0}{1500.0} \right)^{\beta_\text{UV} + 2} \, \mathrm{s^{-1}} \, ,
+    \end{equation*}
+    by how much do galaxies contained within the bubble increase the available ionising-photon budget from \cref{Calculate_ionised_bubble_size}(c)? Does this alleviate the tension with the inferred size required to explain the \Lya emission?
+\end{enumerate}
+
+\bibliography{bubble}
+
+\appendix
+
+\section{Lookup}
+
+\subsection{Converting between flux and flux densities $F_\nu$ and $F_\lambda$}
+\label{app:Flux_conversions}
+
+\begin{align*}
+    F & = \frac{L}{4 \pi d^2}
+    \\
+    F_\nu & = \frac{F}{\Delta \nu}, \quad F_\lambda = \frac{F}{\Delta \lambda}
+    \\
+    \lambda & = \frac{c}{\nu}
+    \\
+    \frac{\dif \lambda}{\dif \nu} & = - \frac{c}{\nu^2}
+    \\
+    \dif \nu F_\nu & = \dif \lambda F_\lambda
+    \\
+    F_\nu & = \left| \frac{\dif \lambda}{\dif \nu} \right| F_\lambda = \frac{c}{\nu^2} F_\lambda = \frac{\lambda^2}{c} F_\lambda
+\end{align*}
+
+\subsection{Magnitude system}
+\label{app:Magnitude_system}
+
+With AB magnitude $m_\text{AB}$ as defined by \citep{1983ApJ...266..713O}:
+\begin{align*}
+    m_1 - m_2 & = -2.5 \log_{10} \left( F_1 / F_2 \right)
+    \\
+    m_\text{AB} & = -2.5 \log_{10} \left[ F_\nu \, (\mathrm{erg \, s^{-1} \, cm^{-2} \, Hz^{-1}}) \right] - 48.60
+    \\
+    & = 31.4 - 2.5 \log_{10} \left[ F_\nu \, (\mathrm{nJy}) \right]
+\end{align*}
+
+\subsection{Convenient conversions in frequency/wavelength/velocity space}
+\label{app:Frequency_wavelength_velocity_conversions}
+
+\begin{align*}
+    \lambda & = \frac{\lambda_\mathrm{line}}{1 - \frac{\Delta v}{c}}, \quad \nu = \nu_\mathrm{line} \left( 1 - \frac{\Delta v}{c} \right)
+    \\
+    \Delta \lambda & = \lambda - \lambda_\mathrm{line} = \frac{\lambda_\mathrm{line}}{\frac{c}{\Delta v} - 1}, \quad \Delta \nu = \nu - \nu_\mathrm{line} = - \frac{\Delta v}{c} \nu_\mathrm{line}
+    \\
+    \Delta v & = \left( 1 - \frac{\lambda_\mathrm{line}}{\lambda} \right) c = \frac{c}{1 + \frac{\lambda_\mathrm{line}}{\Delta \lambda}} = - \frac{\Delta \nu}{\nu_\mathrm{line}} c
+    \\
+    & = \frac{c}{1 + R} = \frac{zc}{1+z} \approx z c \: (z \ll 1)
+\end{align*}
+
+\end{document}
