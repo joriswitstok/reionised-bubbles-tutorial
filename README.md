@@ -4,6 +4,11 @@
 
 This repository contains all course material, including three ipython notebooks to be followed alongside the exercise sheet. The pre-existing code only serves as a starting point, feel free to adjust it as you see fit.
 
+From the command line, you can obtain all material in this repository directly with `git`:
+```
+git clone git@github.com:joriswitstok/reionised-bubbles-tutorial.git
+```
+
 ## Software requirements
 
 I highly recommend using an Anaconda environment to manage your python installation. Using the command line (you may have to change the directory where anaconda is installed), you can create a new environment from the command line with
