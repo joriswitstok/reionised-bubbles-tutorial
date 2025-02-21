@@ -17,7 +17,7 @@ cd auxiliary
 conda env create -f bubble3.yml
 conda activate bubble3
 ```
-Then, the following commands first confirm which `pip` installation manager is active, among which should be the one from your new `conda` environment if it has been properly activated, and install the standalone `spectres` module (NB: you may have to change the directory depending on where `anaconda` is installed):
+Then, the following commands first confirm which `pip` installation manager is active, among which should be the one from your new Anaconda environment if it has been properly activated, and install the standalone `spectres` module (NB: you may have to change the directory depending on where `anaconda` is installed):
 ```
 which pip
 ~/anaconda3/envs/bubble3/bin/pip install spectres
@@ -30,11 +30,11 @@ jupyter notebook
 
 ## Using custom code modelling the IGM absorption of Lyα
 
-We will use pre-written code from a module called [`lymana_absorption`](https://github.com/joriswitstok/lymana_absorption). First, you can obtain the source code with `git`:
+We will use pre-written code from a module called [`lymana_absorption`](https://github.com/joriswitstok/lymana_absorption). First, you'll need to obtain the source code with `git`:
 ```
 git clone https://github.com/joriswitstok/lymana_absorption.git
 ```
-Then, you can follow the repository's instructions to install the code into your anaconda environment (double checking if it is still activated):
+Then, you can follow the repository's instructions to install the code into your Anaconda environment (double checking if it is still activated):
 ```
 cd lymana_absorption
 which pip
