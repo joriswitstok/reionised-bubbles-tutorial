@@ -6,7 +6,7 @@ This repository contains all course material, including three ipython notebooks 
 
 Working on GitHub, you can fork this repository and create a [codespace](https://github.com/features/codespaces). On your local machine, you can obtain all material in this repository directly with `git` on the command line:
 ```
-git clone git@github.com:joriswitstok/reionised-bubbles-tutorial.git
+git clone https://github.com/joriswitstok/reionised-bubbles-tutorial.git
 ```
 
 ## Software requirements
