@@ -9,6 +9,9 @@ solutions
 
 .DS_store
 */.DS_store
+.ipynb_checkpoints
+*/.ipynb_checkpoints
+*/.vscode/*
 __pycache__/*
 */__pycache__/*
 build/
