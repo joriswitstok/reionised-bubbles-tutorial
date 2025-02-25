@@ -6,6 +6,3 @@ lmfit
 spectres
 matplotlib
 seaborn
-pylint
-notebook
-anaconda-clean
