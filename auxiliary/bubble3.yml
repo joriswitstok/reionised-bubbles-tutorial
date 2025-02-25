@@ -1,10 +1,9 @@
 # Install spectres with ~/anaconda3/envs/bubble3/bin/pip3 install spectres
 name: bubble3
 channels:
-  - astropy
   - conda-forge
 dependencies:
-  - python=3
+  - python>=3.8
   - numpy
   - scipy
   - astropy

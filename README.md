@@ -4,7 +4,7 @@
 
 This repository contains all course material, including three ipython notebooks to be followed alongside the exercise sheet. The pre-existing code only serves as a starting point, feel free to adjust it as you see fit.
 
-Working on GitHub, you can fork this repository and create a [codespace](https://github.com/features/codespaces). On your local machine, you can obtain all material in this repository directly with `git` on the command line:
+Working on GitHub, you can fork this repository and create a [codespace](https://github.com/features/codespaces). Alternatively, having navigated to a suitable directory on your local machine, you can obtain all material in this repository directly with `git` on the command line:
 ```
 git clone https://github.com/joriswitstok/reionised-bubbles-tutorial.git
 ```
@@ -13,7 +13,7 @@ git clone https://github.com/joriswitstok/reionised-bubbles-tutorial.git
 
 I highly recommend using an [Anaconda environment](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html) to manage your python installation. Having installed [Anaconda](https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html#), you can create a new environment from the command line by going into this repository's `auxiliary` directory and using the `bubble3.yml` file listing the necessary modules:
 ```
-cd auxiliary
+cd reionised-bubbles-tutorial/auxiliary
 conda env create -f bubble3.yml
 conda activate bubble3
 ```
@@ -30,7 +30,7 @@ jupyter notebook
 
 ## Using custom code modelling the IGM absorption of Lyα
 
-We will use pre-written code from a module called [`lymana_absorption`](https://github.com/joriswitstok/lymana_absorption). First, you'll need to obtain the source code with `git`:
+We will use pre-written code from a module called [`lymana_absorption`](https://github.com/joriswitstok/lymana_absorption). First, you'll need to obtain the source code with `git` in an installation directory of choice:
 ```
 git clone https://github.com/joriswitstok/lymana_absorption.git
 ```
