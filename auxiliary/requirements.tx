@@ -1,0 +1,11 @@
+numpy
+scipy
+astropy
+astroquery
+lmfit
+spectres
+matplotlib
+seaborn
+pylint
+notebook
+anaconda-clean
