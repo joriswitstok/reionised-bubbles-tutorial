@@ -97,7 +97,7 @@
 
 \title{Reionized bubbles around primordial galaxies: exercises}
 \author{Joris Witstok (\href{mailto:joris.witstok@nbi.ku.dk}{joris.witstok@nbi.ku.dk})}
-\date{\today}
+\date{\url{https://github.com/joriswitstok/reionised-bubbles-tutorial}}
 
 \begin{document}
 
@@ -132,7 +132,7 @@ Given atomic number $Z$, the energy levels $E_n$ in the classical \citet{1913PMa
     \end{enumerate}
 \end{problem}
 \begin{problem}
-    Keeping in mind that electrons usually carry some kinetic energy, what is the energy of a photon produced in the event where hydrogen recombination ($H^+ + e^- \rightarrow H^0$) directly results in the ground state ($n = 1$)? Explain why for case-B recombination we can make the so-called `on-the-spot approximation', where only recombinations leaving hydrogen in one of the excited states ($n > 1$) are taken into account.
+    Keeping in mind that electrons usually carry some kinetic energy, what is the energy of a photon produced in the event where hydrogen recombination ($H^+ + e^- \rightarrow H^0$) directly results in the ground state ($n = 1$)? \underline{Discuss} why for case-B recombination we can make the so-called `on-the-spot approximation', where only recombinations leaving hydrogen in one of the excited states ($n > 1$) are taken into account.
 \end{problem}
 \begin{problem}
     \label{prob:HII_region}
@@ -186,7 +186,7 @@ We will be using NIRSpec spectra obtained as part of the JWST Advanced Deep Extr
 NIRSpec spectroscopy in JADES is taken in the PRISM disperser operating at low spectral resolution across $1$-$5 \, \mathrm{\upmu m}$, as well as in the medium-resolution G140M, G235M, and G395M gratings (see \cref{prob:HI_wavelengths}). Fully reduced and science-ready observations from JADES are publicly available on the Mikulski Archive for Space Telescopes (MAST). A dedicated MAST web page (\url{https://archive.stsci.edu/hlsp/jades}) describes how we can access the high-level science products (HLSP) via the \textsc{python} package \textsc{astroquery}.
 \begin{enumerate}[label=(\alph*)]
     \item Run the relevant code block in the notebook to download the PRISM/CLEAR, G140M, and G395M spectra of ID 1899 onto your local machine.
-    \item Open the preview of the PRISM spectrum. This shows the one-dimensional spectrum, which is extracted from the two-dimensional spectrum (how the dispersed light will show up on the detector). Why is the central trace with positive signal-to-noise ratio (SNR) surrounded by two negative traces on either side?
+    \item Open the preview of the PRISM spectrum. This shows the one-dimensional spectrum, which is extracted from the two-dimensional spectrum (how the dispersed light will show up on the detector). \underline{Discuss} why the central trace with positive signal-to-noise ratio (SNR) is surrounded by two negative traces on either side?
     \item Plot the one-dimensional spectra by reading in the downloaded \texttt{*x1d} files in FITS (Flexible Image Transport System) format.
 \end{enumerate}
 
@@ -196,8 +196,8 @@ Several strong rest-frame optical emission lines are observed at the red of the 
     \setcounter{enumi}{3}
     \item What is the highest redshift \Halpha can be seen with NIRSpec? And \Hbeta?
     \item Given its spectral resolution of at least $R \approx 1000$ in the observed G395M spectrum, what is the expected precision (its standard deviation $\sigma_z$) of our redshift measurement? Assume the line spread function (LSF) is Gaussian, with full-width at half maximum (FWHM) $\Delta \lambda$ relating to $R$ via $R \equiv \lambda/\Delta\lambda$. (Hint: you can convert the FWHM of a Gaussian to the standard deviation $\sigma$ by dividing by a factor $2 \sqrt{2 \ln(2)} \approx 2.35$.)
-    \item Construct a model of Gaussian line profiles to measure the redshift from the \Hbeta and \OIII lines observed at $4.4$-$4.9 \, \mathrm{\upmu m}$ in the G395M spectrum. You can assume the spectral resolution to be constant value of $R = 1500$ across this wavelength range, and an intrinsic line width ranging across $0 < \sigma_\text{int} < 500 \, \mathrm{km \, s^{-1}}$. Does the uncertainty on the redshift measurement match your estimate from above (if not, why)?
-    \item With the measured systemic redshift, fit a Gaussian profile to the \Lya line in the G140M spectrum (NB: the line centre may be resonantly scattered away from the systemic redshift; see \cref{app:Frequency_wavelength_velocity_conversions} for the relevant conversions). From the luminosity ratio between \Lya and \Hbeta, determine the escape fraction of \Lya, $f_\text{esc, \Lya}$.
+    \item Construct a model of Gaussian line profiles to measure the redshift from the \Hbeta and \OIII lines observed at $4.4$-$4.9 \, \mathrm{\upmu m}$ in the G395M spectrum. You can assume the spectral resolution to be constant value of $R = 1500$ across this wavelength range, and an intrinsic line width ranging across $0 < \sigma_\text{int} < 500 \, \mathrm{km \, s^{-1}}$. \underline{Discuss}: does the uncertainty on the redshift measurement match your estimate from above and if not, why?
+    \item With the measured systemic redshift, fit a Gaussian profile to the \Lya line in the G140M spectrum (NB: the line centre may be resonantly scattered away from the systemic redshift; see \cref{app:Frequency_wavelength_velocity_conversions} for the relevant conversions). Comparing the case-B luminosity ratio between \Lya and \Hbeta \citep[$L_\text{\Lya}/L_\text{\Hbeta} \approx 23.3$;][]{2023A&A...678A..68S} to the observed ratio, determine the escape fraction of \Lya, $f_\text{esc, \Lya}$.
 \end{enumerate}
 
 \noindent Now we will repeat the exercise for (much fainter) source ID 10013682 in the DEEP/HST tier of JADES, which was first identified as a remarkably strong LAE in the GOODS-S field by \citet{2023A&A...678A..68S}.
@@ -223,8 +223,8 @@ running the code block that reproduces Figure~1 from \citet{2020MNRAS.499.1395M}
 Finally, we will estimate the ionised bubble radius that ID 10013682 resides in. Following \citet{2024A&A...682A..40W}, we are looking for the value of $R_\text{ion}$ at which the IGM transmission at the measured \Lya velocity offset is equal to the estimated \Lya escape fraction to find an effective lower limit on $R_\text{ion}$.
 \begin{enumerate}[label=(\alph*)]
     \item Predict the IGM transmission at the measured \Lya velocity offset $\Delta v_\text{\Lya}$ for a range of ionised bubble sizes (logarithmically spaced between $1 \, \mathrm{pkpc}$ and $10 \, \mathrm{pMpc}$), and estimate (through interpolation) at which ionised bubble radius $R_\text{ion}$ the IGM transmission becomes equal to the \Lya escape fraction.
-    \item Why does this effectively yield a lower limit on $R_\text{ion}$? What are the caveats of estimating $R_\text{ion}$ with this method?
-    \item Inexcusably, \citet{2024A&A...682A..40W} do not report uncertainties on their inferred bubble radii. Just considering the uncertainty on $\Delta v_\text{\Lya}$, what range of $R_\text{ion}$ do you find?
+    \item \underline{Discuss} why this effectively yields a lower limit on $R_\text{ion}$? What are the caveats of estimating $R_\text{ion}$ with this method?
+    \item Inexcusably, \citet{2024A&A...682A..40W} do not report uncertainties on their inferred bubble radii. Just considering the stated uncertainty on $\Delta v_\text{\Lya}$, what uncertainty range of $R_\text{ion}$ do you find?
     \item Given its absolute UV magnitude\footnote{See \url{https://en.wikipedia.org/wiki/Absolute_magnitude}.} of $M_\text{UV} \approx -17 \, \mathrm{mag}$ and ionising photon efficiency directly measured to be $\log \xi_\text{ion} = 25.66 \, \mathrm{Hz \, erg^{-1}}$ by \citet{2024A&A...684A..84S}, how long would it take ID 10013682 to create this ionised region itself if it had an escape fraction $100\%$? (Hint: use (i) \cref{app:Magnitude_system} to convert $M_\text{UV}$ to a flux density $F_{\nu, \, \text{UV}}$, (ii) \cref{app:Flux_conversions} to obtain the luminosity density $L_{\nu, \, \text{UV}}$, (iii) the fact that $\dot{N}_\text{ion} = \xi_\text{ion} L_{\nu, \, \text{UV}}$, and (iv) your solution from \cref{prob:bubble_radius_evolution}(b) to calculate the required age.)
 \end{enumerate}
 

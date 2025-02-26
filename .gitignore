@@ -1,5 +1,5 @@
 data/mastDownload
-manual/*.auxiliary
+manual/*.aux
 manual/*.bbl
 manual/*.blg
 manual/*.log
