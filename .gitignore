@@ -1,11 +1,9 @@
-data/mastDownload
 manual/*.aux
 manual/*.bbl
 manual/*.blg
 manual/*.log
 manual/*.out
 manual/*.synctex.gz
-solutions
 
 .DS_store
 */.DS_store
