@@ -22,7 +22,7 @@ conda activate bubble3
 Then, the following commands first confirm which `pip` installation manager is active, among which should be the one from your new Anaconda environment if it has been properly activated, and install the standalone `spectres` module (NB: you may have to change the directory depending on where `anaconda` is installed):
 ```
 which pip3 # check which pip installation manager is active
-~/anaconda3/envs/bubble3/bin/pip3 install spectres # you may have to change the conda installation directory
+pip3 install spectres
 ```
 Then, you can start up a Jupyter notebook instance with (again checking if it correctly uses your conda environment):
 ```
@@ -49,5 +49,5 @@ Then, you can follow the repository's instructions to install the code into your
 ```
 cd lymana_absorption
 which pip3
-~/anaconda3/envs/bubble3/bin/pip3 install .
+pip3 install .
 ```
