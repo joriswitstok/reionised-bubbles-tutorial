@@ -139,7 +139,7 @@ Given atomic number $Z$, the energy levels $E_n$ in the classical \citet{1913PMa
     When evolving on the main sequence, spectral O-type stars may have a size ten times that of the Sun, effective surface temperature of $\num{40000} \, \mathrm{K}$, and emit hydrogen-ionising photons at a rate of $\dot{N}_\text{ion} = 10^{49} \, \mathrm{s^{-1}}$. Consider a surrounding \HII region consisting of pure hydrogen, with a number density of $n_\mathrm{H} = 300 \, \mathrm{cm^{-3}}$.
     \begin{enumerate}[label=(\alph*)]
         \item If the \HII region is $4 \, \mathrm{parsec}$ in diameter, would it be ionisation bounded? Check in the range of electron temperatures $\num{10000} \, \mathrm{K} < T_e < \num{30000} \, \mathrm{K}$, where you can assume the (case-B) recombination rate of the gas to follow $\alpha_\text{rec} = 2.54 \times 10^{-13} \, (T_e/10^4)^{-0.8} \, \mathrm{cm^3 \, s^{-1}}$.
-        \item If roughly two out of three of recombination events lead to the emission of a \Lya photon (in the ionisation-bounded case), what is the \Lya luminosity of the cloud? How does this compare to the bolometric luminosity of the central star, if assumed to be a perfect blackbody?
+        \item If roughly two out of three of recombination events lead to the emission of a \Lya photon (in the ionisation-bounded case), what is the \Lya luminosity of the cloud? How does this compare to the bolometric luminosity of the central star $L_\text{bol}$, if assumed to be a perfect blackbody (hint: derive $L_\text{bol}$ based on the size mentioned above and the Stefan-Boltzmann law)?
     \end{enumerate}
 \end{problem}
 
@@ -228,7 +228,7 @@ Finally, we will estimate the ionised bubble radius that ID 10013682 resides in.
     \item Given its absolute UV magnitude\footnote{See \url{https://en.wikipedia.org/wiki/Absolute_magnitude}.} of $M_\text{UV} \approx -17 \, \mathrm{mag}$ and ionising photon efficiency directly measured to be $\log \xi_\text{ion} = 25.66 \, \mathrm{Hz \, erg^{-1}}$ by \citet{2024A&A...684A..84S}, how long would it take ID 10013682 to create this ionised region itself if it had an escape fraction $100\%$? (Hint: use (i) \cref{app:Magnitude_system} to convert $M_\text{UV}$ to a flux density $F_{\nu, \, \text{UV}}$, (ii) \cref{app:Flux_conversions} to obtain the luminosity density $L_{\nu, \, \text{UV}}$, (iii) the fact that $\dot{N}_\text{ion} = \xi_\text{ion} L_{\nu, \, \text{UV}}$, and (iv) your solution from \cref{prob:bubble_radius_evolution}(b) to calculate the required age.)
 \end{enumerate}
 
-\subsection{Visualise the environment of the ionised bubble}
+\subsection{Visualise the environment of the ionised bubble (optional)}
 
 The NIRCam wide-field slitless spectroscopic mode allows an efficient way to obtain spectra of a large number of galaxies. This has been exploited in the FRESCO survey \citep{2023MNRAS.525.2864O} covering both the GOODS fields, allowing a `blind' redshift search up to $z \approx 8$.
 \begin{enumerate}[label=(\alph*)]
