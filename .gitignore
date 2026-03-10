@@ -13,4 +13,5 @@ manual/*.synctex.gz
 __pycache__/*
 */__pycache__/*
 build/
-solutions/
+solutions/spectral_fitting*
+solutions/bubble_analysis*
